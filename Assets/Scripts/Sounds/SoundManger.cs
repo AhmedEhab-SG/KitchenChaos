@@ -2,7 +2,13 @@ using UnityEngine;
 
 public class SoundManger : MonoBehaviour {
 
+    public static SoundManger Instance { get; private set; }
+
     [SerializeField] private AudioClipRefsSO audioClipRefsSO;
+
+    private void Awake() {
+        Instance = this;
+    }
 
     private void Start() {
         DeliveryManger.Instance.OnRecipeFailed += DeliveryManger_OnRecipeFailed;
@@ -44,5 +50,9 @@ public class SoundManger : MonoBehaviour {
 
     private void PlaySound(AudioClip[] audioClips, Vector3 position, float volume = 1f) {
         AudioSource.PlayClipAtPoint(audioClips[Random.Range(0, audioClips.Length)], position, volume);
+    }
+
+    public void PlayFootstepsSound(Vector3 position, float volume = 1f) {
+        PlaySound(audioClipRefsSO.footstep, position, volume);
     }
 }
