@@ -1,0 +1,9 @@
+# Applies to all C# files globally
+[*.cs]
+csharp_new_line_before_open_brace = none
+csharp_new_line_before_else = false
+csharp_new_line_before_catch = false
+csharp_new_line_before_finally = false
+
+# remove new line between query expression clauses
+csharp_new_line_between_query_expression_clauses = false
