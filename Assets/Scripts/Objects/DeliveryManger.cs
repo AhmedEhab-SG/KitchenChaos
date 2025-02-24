@@ -18,6 +18,7 @@ public class DeliveryManger : MonoBehaviour {
     private float spwanRecipeTimer;
     private float maxSpwanRecipeTimer = 4f;
     private int waitingRecipesMax = 4;
+    private int successfulRecipesAmount = 0;
 
 
 
@@ -72,6 +73,8 @@ public class DeliveryManger : MonoBehaviour {
 
                 // if the plate contents match the recipe
                 if (plateContentsMatchRecipe) {
+                    successfulRecipesAmount++;
+
                     waitingRecipeSOList.Remove(recipeSO);
 
                     OnRecipeCompleted?.Invoke(this, EventArgs.Empty);
@@ -89,4 +92,9 @@ public class DeliveryManger : MonoBehaviour {
     public List<RecipeSO> GetWaitingRecipeSOList() {
         return waitingRecipeSOList;
     }
+
+    public int GetSuccessfulRecipesAmount() {
+        return successfulRecipesAmount;
+    }
+
 }
