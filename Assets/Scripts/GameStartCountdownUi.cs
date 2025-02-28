@@ -4,7 +4,6 @@ using UnityEngine;
 public class GameStartCountdownUi : MonoBehaviour {
     [SerializeField] private TextMeshProUGUI countdownText;
 
-
     private void Start() {
         KitchenGameManger.Instance.OnStateChanged += KitchenGameManger_OnStateChanged;
 

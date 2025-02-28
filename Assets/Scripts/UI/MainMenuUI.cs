@@ -8,6 +8,9 @@ public class MainMenuUI : MonoBehaviour {
     private void Awake() {
         playButton.onClick.AddListener(OnClickPlayButtonHandler);
         quitButton.onClick.AddListener(OnClickQuitButtonHandler);
+
+        // resets the time scale to normal
+        Time.timeScale = 1f;
     }
 
     private void OnClickPlayButtonHandler() {
