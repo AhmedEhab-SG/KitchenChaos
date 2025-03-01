@@ -5,10 +5,12 @@ public class GamePauseUI : MonoBehaviour {
 
     [SerializeField] private Button resumeButton;
     [SerializeField] private Button mainMenuButton;
+    [SerializeField] private Button optionsButton;
 
     private void Awake() {
         resumeButton.onClick.AddListener(OnResumeButtonClicked);
         mainMenuButton.onClick.AddListener(OnMainMenuButtonClicked);
+        optionsButton.onClick.AddListener(OnClickOptionsButtonHandler);
     }
 
     private void Start() {
@@ -25,6 +27,10 @@ public class GamePauseUI : MonoBehaviour {
 
     private void OnResumeButtonClicked() {
         KitchenGameManger.Instance.TogglePauseGame();
+    }
+
+    private void OnClickOptionsButtonHandler() {
+        OptionsUI.Instance.Show();
     }
 
     private void KitchenGameManger_OnGameResumed(object sender, System.EventArgs e) {

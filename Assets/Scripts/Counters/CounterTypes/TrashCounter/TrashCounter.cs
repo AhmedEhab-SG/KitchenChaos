@@ -3,7 +3,7 @@ using System;
 public class TrashCounter : BaseCounter {
     public static event EventHandler OnAnyObjectTrash;
 
-    public static void ResetStaticData() {
+    new public static void ResetStaticData() {
         OnAnyObjectTrash = null;
     }
 

@@ -3,7 +3,7 @@ using UnityEngine;
 public class ResetStaticDataManger : MonoBehaviour {
 
     private void Awake() {
-        BaseCounter.ResetBaseStaticData();
+        BaseCounter.ResetStaticData();
         CuttingCounter.ResetStaticData();
         TrashCounter.ResetStaticData();
     }
