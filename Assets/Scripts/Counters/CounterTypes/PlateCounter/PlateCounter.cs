@@ -16,7 +16,7 @@ public class PlateCounter : BaseCounter {
     public void Update() {
         spwanPlateTime += Time.deltaTime;
 
-        if (spwanPlateTime >= spwanPlateTimeMax) {
+        if (KitchenGameManger.Instance.IsGamePlaying() && spwanPlateTime >= spwanPlateTimeMax) {
             spwanPlateTime = 0f;
 
             if (platesSpwanedAmount < platesSpwanedAmountMax) {

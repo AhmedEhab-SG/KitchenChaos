@@ -148,4 +148,8 @@ public class StoveCounter : BaseCounter, IHasProgress {
 
         return fryingRecipeSO != null ? fryingRecipeSO.output : null;
     }
+
+    public bool IsFried() {
+        return state == State.Fried;
+    }
 }

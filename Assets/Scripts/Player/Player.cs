@@ -72,7 +72,7 @@ public class Player : MonoBehaviour, IKitchenObjectParent {
             // Check if we can move on X
             Vector3 moveDirX = new Vector3(moveDir.x, 0f, 0f).normalized;
 
-            bool canMoveX = moveDir.x != 0 && !Physics.CapsuleCast(transform.position, transform.position + Vector3.up * playerHeight, playerRedius, moveDirX, moveDistance);
+            bool canMoveX = (moveDir.x < -0.5f || moveDir.x > +0.5f) && !Physics.CapsuleCast(transform.position, transform.position + Vector3.up * playerHeight, playerRedius, moveDirX, moveDistance);
 
             // If we can move on X, move on X
             if (canMoveX) transform.position += moveDirX * moveDistance;
